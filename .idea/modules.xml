@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/estudodb.iml" filepath="$PROJECT_DIR$/.idea/estudodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/estudoApi.iml" filepath="$PROJECT_DIR$/.idea/estudoApi.iml" />
     </modules>
   </component>
 </project>
