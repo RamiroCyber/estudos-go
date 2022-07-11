@@ -43,7 +43,7 @@ func getMovie(w http.ResponseWriter, r *http.Request) {
 
 func creatMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	
+
 	var movie entities.Movie
 	json.NewDecoder(r.Body).Decode(&movie)
 
@@ -51,6 +51,23 @@ func creatMovie(w http.ResponseWriter, r *http.Request) {
 	movies = append(movies, movie)
 
 	json.NewEncoder(w).Encode(movie)
+}
+
+func updateMovie(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	parans := mux.Vars(r)
+
+	for i, movie := range movies {
+		if movie.ID == parans["id"] {
+			movies = append(movies[:i], movies[i+1:]...)
+			var movie entities.Movie
+			json.NewDecoder(r.Body).Decode(&movie)
+			movies = append(movies, movie)
+			json.NewEncoder(w).Encode(movie)
+			return
+		}
+	}
 }
 
 func main() {
