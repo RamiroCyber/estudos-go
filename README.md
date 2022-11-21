@@ -1,1 +1,1 @@
-# estudo basico sobre crud em golang
+# estudosobre crud em golang
